@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pharmacy</title>
+        <link rel="stylesheet" href="styles/style.css" type="text/css">
+    </head>
+    <body>
+        <header>
+                <h1>Home</h1>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Our Medices</a>
+                    <div class="dropdown-content">
+                        <a href="#">Fever</a>
+                        <a href="#">Muscle Pains</a>
+                        <a href="#">Cold and Cough</a>
+                      </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Health Care</a>
+                    <div class="dropdown-content">
+                        <a href="#">Baby Care</a>
+                        <a href="#">Skin Care</a>
+                        <a href="#">Home Care</a>
+                        <a href="#">Personal Care</a>
+                        <a href="#">Pet Care</a>
+                      </div>
+                </li>
+                <li><a href="lab_test.html">Lab Tests</a></li>
+            </ul>
+        </nav> 
+        <!--div class="spacer"></div-->
+        <div class="slideshow">
+            <img class="slides" src="images/Animation/ani1.jpg">
+            <img class="slides" src="images/Animation/ani2.png">
+            <img class="slides" src="images/Animation/ani3.jpg">
+            <img class="slides" src="images/Animation/ani4.jpg">
+            <img class="slides" src="images/Animation/ani5.jpg">
+        </div>
+        <h2>Covid Care</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Covid Test Kit</h3>
+                <img class="img_wrapper" src="Images/Products/c1.jpg" alt="Covid Test Kit">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <h3>Covid Essentials</h3>
+                <img class="img_wrapper" src="Images/Products/c2.jpg" alt="Covid Essentials">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <h3>Santitizer Bottle</h3>
+                <img class="img_wrapper" src="Images/Products/c3.jpg" alt="Santitizer Bottle">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <h3>Mask</h3>
+                <img class="img_wrapper" src="Images/Products/c4.jpg" alt="Mask">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <h2>Diabetes Care</h2>
+        <div class="container">
+            <div class="card">
+                <h3>BGR-34</h3>
+                <img class="img_wrapper" src="Images/Products/d1.jpg" alt="BGR-34">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <h3>Dabur</h3>
+                <img class="img_wrapper" src="Images/Products/d2.jpg" alt="Dabur">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <h3>Colgate</h3>
+                <img class="img_wrapper" src="Images/Products/d3.jpg" alt="Colgate">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <h3>Unibic</h3>
+                <img class="img_wrapper" src="Images/Products/d4.png" alt="Unibic">
+                <p class="price">Rs. 40</p>
+                <p class="price">Offer Rs: 30/-</p>
+                <p class="wrapper"><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <script>
+            
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("slides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(carousel, 4000); // Changes image every 4 seconds
+            }
+
+            window.onscroll = function() {myFunction()};
+
+            var header = document.getElementById("nav");
+            var sticky = header.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            }
+        </script>
+        <footer>
+            <p class="align">@copyright. Only for demonstration purposes</p>
+        </footer>
+    </body>
+</html>

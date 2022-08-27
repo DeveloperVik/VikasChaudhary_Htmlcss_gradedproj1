@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pharmacy</title>
+        <link rel="stylesheet" href="styles/style.css" type="text/css">
+    </head>
+    <body>
+        <header>
+                <h1>Lab Test</h1>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Our Medices</a>
+                    <div class="dropdown-content">
+                        <a href="#">Fever</a>
+                        <a href="#">Muscle Pains</a>
+                        <a href="#">Cold and Cough</a>
+                      </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Health Care</a>
+                    <div class="dropdown-content">
+                        <a href="#">Baby Care</a>
+                        <a href="#">Skin Care</a>
+                        <a href="#">Home Care</a>
+                        <a href="#">Personal Care</a>
+                        <a href="#">Pet Care</a>
+                      </div>
+                </li>
+                <li><a href="lab_test.html">Lab Tests</a></li>
+            </ul>
+        </nav>
+        <div class="form_container">
+            <form id="myform" action="#" onsubmit="return validate();">
+                <h3>1. Your Contact Details</h3>
+                <div class = "field_contain">
+                    <input type="text" id="fname" name="fullname" placeholder="Full Name" required>
+            
+                    <input type="text" id="pid" name="patientid" placeholder="Patient ID if exist" required>
+              
+                </div>
+                <div class = "field_contain">
+                    <input type="text" id="cnumber" name="contactnumber" placeholder="Contact Number" required>
+            
+                    <input type="text" id="email" name="email" placeholder="Email ID" required>
+                    
+                </div>
+                <h3>2. Address</h3>
+                <div class = "field_contain">
+                    <input type="text" id="hno" name="houseno" placeholder="House No." required>
+            
+                    <input type="text" id="street" name="street" placeholder="Street" required>
+                
+                </div>
+                <div class = "field_contain">
+                    <input type="text" id="area" name="area" placeholder="Area" required>
+        
+                    
+                </div>
+                
+            
+                <label for="district">District</label>
+                <select id="district" name="district">
+                    <option value="choose">Choose</option>
+                    <option value="australia">District1</option>
+                    <option value="canada">District3</option>
+                    <option value="usa">District4</option>
+                </select>
+                <p>(Check atleast one box without fail)</p>
+                <h3>3. Choose the Test Type.</h3>
+                <div>
+                    <input type="checkbox" id="cbc" name="option1" value="CBC">
+                    <label for="option1"> CBC</label><br>
+                    <input type="checkbox" id="Curine" name="option1" value="Complete Urine">
+                    <label for="option2"> Complete Urine</label><br>
+                    <input type="checkbox" id="Lprofile" name="option1" value="Lipid Profile">
+                    <label for="option3"> Lipid Profile</label><br>
+                    <input type="checkbox" id="tsh" name="option1" value="Thyroid Stimulating Hormone(TSH)">
+                    <label for="option4"> Thyroid Stimulating Hormone(TSH)</label><br>
+                    <input type="checkbox" id="Gtest" name="option1" value="Glucose Test">
+                    <label for="option5"> Glucose Test</label><br>
+                </div>
+
+                <h3>4. Do you want a hard copy of the report also?</h3>
+                <input type="checkbox" id="yes" name="option2" value="Yes">
+                <label for="option1"> Yes</label><br>
+                <input type="checkbox" id="no" name="option2" value="NO">
+                <label for="option2"> No</label><br>
+                
+                <h3>5. Select Your Comfortable Date and Time.</h3>
+                <input type="checkbox" id="date" name="option3" value="Date">
+                <label for="option1"> Date</label><br>
+                <input type="checkbox" id="time" name="option3" value=" Time">
+                <label for="option2"> Time</label><br>
+                
+            </form>
+            <img class="img_container" src="images/Lab-Test/lab-test.jpg">
+        </div>
+        <div class="button_container">
+            <input type="reset" form="myform" value="Reset">
+            <input type="submit" form="myform" value="Submit"/>
+        </div>
+        <script>
+            function validate(){
+                var op1 = document.getElementsByName("option1");
+                var check1 = 0;
+                for(i=0;i<op1.length;i++){
+                    if(op1[i].checked){
+                    check1++;
+                    break;
+                    }
+                }
+                var op2 = document.getElementsByName("option2");
+                var check2 = 0;
+                for(i=0;i<op2.length;i++){
+                    if(op2[i].checked){
+                    check2++;
+                    break;
+                    }
+                }
+                var op3 = document.getElementsByName("option3");
+                var check3 = 0;
+                for(i=0;i<op3.length;i++){
+                    if(op3[i].checked){
+                    check3++;
+                    break;
+                    }
+                }
+                if(check1 && check2 && check3){
+                }else{
+                    alert("you must select atleast one checkbox from every question to continue");
+                    return false;
+                }
+            }
+            window.onscroll = function() {myFunction()};
+
+            var header = document.getElementById("nav");
+            var sticky = header.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            }
+        </script>
+        <footer>
+            <p class="align">@copyright. Only for demonstration purposes</p>
+        </footer>
+    </body>
+</html>
